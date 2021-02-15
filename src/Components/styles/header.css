@@ -1,0 +1,62 @@
+/* HEADER ------------------- */
+.header {
+  z-index: 1;
+  position: fixed;
+  width: 90%;
+  border: 3px solid yellow;
+  background-color: black;
+  height: 80px;
+  text-align: center;
+  margin: -4vh 0 0 5%;
+ box-shadow: red 0px 0px 10px 5px;
+}
+
+.header h3 {
+  color: red;
+  margin-top: 2%;
+}
+
+.login {
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 40px;
+}
+
+.login button {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  outline: none;
+  background-color: yellow;
+  height: 30px;
+  border-radius: 25px;
+  width: 90px;
+  font-size: 18px;
+  font-weight: bold;
+  color: red;
+}
+
+.user {
+  position: absolute;
+  right: 5%;
+  color: red;
+  background-color: yellow;
+  width: 50px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.logo {
+  position: absolute;
+  left: 4%;
+  top: 0px;
+  height: 80px;
+}
