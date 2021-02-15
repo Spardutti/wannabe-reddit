@@ -5,7 +5,7 @@
   width: 90%;
   border: 3px solid yellow;
   background-color: black;
-  height: 150px;
+  height: 170px;
   text-align: center;
   margin: -4vh 0 0 5%;
   box-shadow: red 0px 0px 10px 5px;
@@ -22,20 +22,31 @@
   top: 50%;
   transform: translateY(-50%);
   width: 200px;
-  height: 40px;
+  height: 100px;
+}
+.username {
+  background-color: yellow;
+  height: 30px;
+  max-width: 100px;
+  border-radius: 20px;
+  position: absolute;
+  left: 10%;
+  text-align: center;
+  font-weight: bold;
+  color: red;
 }
 
 .login button {
   position: absolute;
   left: 10%;
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
   border: none;
   outline: none;
   background-color: yellow;
   height: 30px;
   border-radius: 25px;
-  width: 90px;
+  width: 100px;
   font-size: 18px;
   font-weight: bold;
   color: red;
@@ -62,8 +73,8 @@
 .logo {
   position: absolute;
   left: 4%;
-  top: 0px;
-  height: 80px;
+  top: 20%;
+  height: 100px;
 }
 
 .search-bar {
@@ -106,3 +117,32 @@
   transform: scale(1.1);
   box-shadow: red 0px 0px 10px 3px;
 }
+
+.create-bar {
+  width: 30%;
+  margin: 10px auto;
+  height: 30px;
+}
+
+.create-input {
+  max-width: 150px;
+  background-color: yellow;
+  height: 100%;
+  color: red;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.create-btn {
+  color: red;
+  margin-left: 20px;
+  background-color: yellow;
+  list-style: none;
+  height: 100%;
+  border-radius: 30%;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+

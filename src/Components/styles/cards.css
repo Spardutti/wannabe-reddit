@@ -3,7 +3,6 @@
   background-color: black;
   color: yellow;
   margin: auto;
-  top: 10px;
   position: relative;
   border-radius: 10px;
   text-align: center;
@@ -35,7 +34,7 @@
 }
 
 .description {
-  border: 2px solid red;
+  box-shadow: white 0 0 1px 1px;
   width: 95%;
   margin: auto auto 10px auto;
   height: 50px;

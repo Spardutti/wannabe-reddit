@@ -1,15 +1,13 @@
 import React from "react";
 import "./styles/cards.css";
 
-const Cards = () => {
+const Cards = (props) => {
   return (
     <div className="card-container">
-      <h4 className="card-title">Title</h4>
+      <h4 className="card-title">{props.title}</h4>
       <p className="description">
         
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-        cupiditate iste accusantium odit nemo dolorem reprehenderit dicta quae!
-        Deserunt, eveniet omnis fugiat 
+        {props.description}
       </p>
       <div className="bottom-bar">
         <div className="upvote">
