@@ -10,7 +10,6 @@ function App() {
     <div className="wrapper">
       <Header />
       <MainScreen />
-      
     </div>
   
   );

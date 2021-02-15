@@ -1,0 +1,44 @@
+.card-container {
+  width: 90%;
+  background-color: black;
+  color: yellow;
+  margin: auto;
+  top: 10px;
+  position: relative;
+  border-radius: 10px;
+  text-align: center;
+  height: 150px;
+}
+
+.card-title {
+  color: red;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.bottom-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 95%;
+  margin: auto;
+}
+
+.upvote,
+.downvote,
+.comments,
+.votes {
+  border: 3px solid red;
+  width: 50px;
+  margin: auto;
+  height: 28px;
+  border-radius: 15px;
+}
+
+.description {
+  border: 2px solid red;
+  width: 95%;
+  margin: auto auto 10px auto;
+  height: 50px;
+  max-lines: 2;
+  border-radius: 10px;
+}
