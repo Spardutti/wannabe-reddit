@@ -6,7 +6,7 @@ import firebase from "firebase";
 
 const MainScreen = (props) => {
   const [posts, setPosts] = useState([]);
-
+//figure how ti display a post after it is created;
   const getPost = () => {
     firebase
       .firestore()

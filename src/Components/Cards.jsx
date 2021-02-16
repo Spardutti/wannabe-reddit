@@ -5,10 +5,10 @@ const Cards = (props) => {
   return (
     <div className="card-container">
       <h4 className="card-title">{props.title}</h4>
-      <p className="description">
+      <div className="description">
         
         {props.description}
-      </p>
+      </div>
       <div className="bottom-bar">
         <div className="upvote">
           <i class="fas fa-arrow-up"></i>

@@ -4,55 +4,48 @@ import logo from "./images/WannabeRedditLogo.png";
 import firebase from "firebase";
 
 const Header = (props) => {
-  const [userName, setUserName] = useState("");
-  const [logged, setLogged] = useState(false);
   const [firstLetter, setFirstLetter] = useState("");
 
   const getUserName = (e) => {
-    setUserName(e.target.value);
+    props.setUserName(e.target.value);
   };
 
   const getUserLetter = () => {
-    let name = userName;
+    let name = props.userName;
     let letter = name[0].toUpperCase();
     setFirstLetter(letter);
   };
 
   const logIn = () => {
-    if (userName !== "") {
+    if (props.userName !== "") {
       firebase
         .auth()
         .signInAnonymously()
         .then(() => {
-          console.log("signed in", userName);
+          console.log("signed in", props.userName);
           getUserLetter();
-          setLogged(true);
+          props.setLogged(true);
         })
         .catch((error) => console.error("cant log in" + error));
     } else {
       alert("please enter your user name");
-
     }
   };
 
-  const createPost = (e) => {
-    e.preventDefault();
-    if (logged) {
-      firebase.firestore().collection("posts").add({
-        title: "hola",
-        description: "chao"
-      }).then(console.log("upped"))
 
-      console.log("added");
+  const displayForm = (e) => {
+    e.preventDefault();
+    if (props.logged) {
+      props.setShowForm(true);
     } else {
-      alert("log in before you try to post something")
+      alert("Please log in before posting");
     }
   };
 
   return (
     <div className="header">
       <h3>Wannabe Reddit</h3>
-      {logged ? (
+      {props.logged ? (
         <div className="user">{firstLetter}</div>
       ) : (
         <div className="login">
@@ -61,7 +54,7 @@ const Header = (props) => {
             className="username browser-default"
             type="text"
             placeholder="user name"
-            value={userName}
+            value={props.userName}
             onChange={getUserName}
           />
           <button onClick={logIn}>log in</button>
@@ -79,15 +72,14 @@ const Header = (props) => {
         </button>
       </form>
       <form className="create-bar">
-        <input
-          className="create-input browser-default"
+        <button
+          className="create-post-button"
           type="text"
-          placeholder="create something"
-        />
-        <button onClick={createPost} className="create-btn">
-          <i class="fas fa-plus-circle"></i>
+          onClick={displayForm}
+        >
+          Create Post
         </button>
-      </form>{" "}
+      </form>
     </div>
   );
 };

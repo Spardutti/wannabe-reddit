@@ -38,6 +38,6 @@
   width: 95%;
   margin: auto auto 10px auto;
   height: 50px;
-  max-lines: 2;
+  max-width: 95%;
   border-radius: 10px;
 }

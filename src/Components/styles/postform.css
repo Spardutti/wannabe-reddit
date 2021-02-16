@@ -1,0 +1,59 @@
+.create-post-form {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30%;
+  width: 360px;
+  background-color: black;
+  height: 300px;
+  border: 2px solid yellow;
+  box-shadow: red 0px 0px 10px 5px;
+}
+
+.form-title {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: yellow;
+  height: 30px;
+  border-radius: 20px;
+  text-align: center;
+  color: red;
+}
+
+.form-description {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 25%;
+  width: 90%;
+  min-height: 150px;
+  border: 1px solid black;
+  box-shadow: 0 0 5px 2px red;
+  background-color: yellow;
+  color: red;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.form-button {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: yellow;
+  color: red;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: bold;
+  height: 30px;
+  width: 100px;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: #f1f1f1;
+}
+textarea {
+  scrollbar-width: none;
+}

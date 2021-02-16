@@ -124,25 +124,28 @@
   height: 30px;
 }
 
-.create-input {
-  max-width: 150px;
+.create-post-button {
+  width: 150px;
   background-color: yellow;
   height: 100%;
   color: red;
   border-radius: 20px;
   text-align: center;
+  font-weight: bold;
+  outline: none;
+
 }
 
-.create-btn {
-  color: red;
-  margin-left: 20px;
-  background-color: yellow;
-  list-style: none;
-  height: 100%;
-  border-radius: 30%;
-  font-size: 15px;
-  font-weight: bold;
+.create-post-button:hover {
+  transform: scale(1.1);
+  box-shadow: red 0px 0px 10px 3px;
 }
+.create-post-button:focus {
+  background-color: yellow;
+  color: red;
+}
+
+
 
 
 
