@@ -1,0 +1,42 @@
+.full-card-container {
+background-color: black;
+margin: 200px auto;
+width: 60%;
+height: 600px;
+box-shadow: red 0px 0px 10px 5px;
+border: 3px solid yellow;
+text-align: center;
+}
+
+.full-card-title{
+    color: red;
+   font-size: 50px;
+   font-weight: bold;
+}
+
+.full-card-author{
+    color: red;
+    margin-top: 0px;
+}
+
+.full-card-description{
+    color: red;
+}
+
+.full-card-bottom-bar{}
+
+.upvote{}
+
+.downvote{}
+
+.commnets{}
+
+.votes{}
+
+.full-card-arrow {
+    color: red;
+    position: absolute;
+    margin: 0 0 0 30px;
+    font-size: 50px;
+    cursor: pointer;
+}

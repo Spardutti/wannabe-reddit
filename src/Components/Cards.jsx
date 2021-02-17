@@ -2,9 +2,12 @@ import React from "react";
 import "./styles/cards.css";
 
 const Cards = (props) => {
+
+
   return (
-    <div className="card-container">
+    <div className="card-container" onClick={props.openPost} id={props.id}>
       <h4 className="card-title">{props.title}</h4>
+      <p className="author">Created by: {props.author} {props.time}</p>
       <div className="description">
         
         {props.description}
