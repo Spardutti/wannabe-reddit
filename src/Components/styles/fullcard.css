@@ -6,6 +6,7 @@ height: 600px;
 box-shadow: red 0px 0px 10px 5px;
 border: 3px solid yellow;
 text-align: center;
+position: relative;
 }
 
 .full-card-title{
@@ -21,11 +22,29 @@ text-align: center;
 
 .full-card-description{
     color: red;
+    background-color: yellow;
+    width: 80%;
+    margin: auto;
+    min-height: 200px;
+    text-align: left;
+    font-size: 20px;
+    padding: 5px;
+    word-wrap: break-word;
 }
 
-.full-card-bottom-bar{}
 
-.upvote{}
+.full-card-bottom-bar{ 
+background-color: yellow;
+margin: 10px auto;
+bottom: 0;
+width: 80%;
+height: 40px;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+}
+   
+.upvote{
+}
 
 .downvote{}
 

@@ -16,11 +16,11 @@ const Cards = (props) => {
         <div className="upvote">
           <i class="fas fa-arrow-up"></i>
         </div>
+        <div className="votes">10</div>
         <div className="downvote">
           <i class="fas fa-arrow-down"></i>
         </div>
               <div className="comments">3</div>
-              <div className="votes">10</div>
       </div>
     </div>
   );
