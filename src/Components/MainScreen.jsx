@@ -11,7 +11,7 @@ const MainScreen = (props) => {
   const [posts, setPosts] = useState([]);
   const [fullPost, setFullPost] = useState(false);
   const [postId, setPostId] = useState("");
-  //figure how ti display a post after it is created;
+
   const getPost = () => {
     firebase
       .firestore()
@@ -70,16 +70,19 @@ const MainScreen = (props) => {
         <div className="main-screen">
           <Welcome />
           {posts.map((e) => {
-            return (
-              <Cards
-              time={Moment(e.time.toDate()).fromNow()}
-                id={e.id}
-                openPost={openPost}
-                author={e.author}
-                title={e.title}
-                description={e.description}
-              />
-            );
+            if (e.time === null) {
+              e.time = Moment();
+            } else
+              return (
+                <Cards
+                  time={Moment(e.time.toDate()).fromNow()}
+                  id={e.id}
+                  openPost={openPost}
+                  author={e.author}
+                  title={e.title}
+                  description={e.description}
+                />
+              );
           })}
         </div>
       )}

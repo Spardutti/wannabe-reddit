@@ -18,7 +18,6 @@ const PostForm = (props) => {
 
   const createPost = (e) => {
     e.preventDefault();
-    console.log("onClick");
     if (props.logged) {
       firebase
         .firestore()
@@ -30,7 +29,6 @@ const PostForm = (props) => {
           timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         })
         .then(
-          console.log("upped"),
           props.setShowForm(false))
       .catch(error => console.log("error"))
     }
