@@ -11,7 +11,9 @@ const MainScreen = (props) => {
   const [posts, setPosts] = useState([]);
   const [fullPost, setFullPost] = useState(false);
   const [postId, setPostId] = useState("");
+  const [postComments, setPostComments] = useState([]);
 
+  //get the post from the database
   const getPost = () => {
     firebase
       .firestore()
@@ -25,25 +27,40 @@ const MainScreen = (props) => {
             description: elem.data().description,
             author: elem.data().author,
             time: elem.data().timestamp,
-            id: elem.data().id
+            id: elem.data().id,
           };
+          //get the data from the DB and set it on an array to display it
           setPosts((oldarray) => [...oldarray, post]);
         });
       });
   };
-
+  //updates the dom
   useEffect(() => {
     getPost();
   }, []);
 
+  //open the clicked post to see the comments/full post
   const openPost = (e) => {
     let id = e.target.parentNode.id;
+    firebase
+      .firestore()
+      .collection("posts")
+      .where("id", "==", id)
+      .get()
+      .then((snapshot) => {
+        snapshot.forEach((e) => {
+          let arr = e.data().comments;
+          setPostComments((old) => [...old, arr]);
+          console.log(arr);
+        });
+      });
     setPostId(id);
     setFullPost(true);
   };
 
   useEffect(() => {}, [postId]);
 
+  //hide the post / retur to mainSCreen
   const hidePost = () => {
     setFullPost(false);
   };
@@ -51,23 +68,27 @@ const MainScreen = (props) => {
   return (
     <div>
       {fullPost ? (
+        //display the clickec post maximized
         <div>
           {posts.map((e) => {
             if (e.id === postId) {
               return (
                 <FullPost
+                  logged={props.logged}
                   id={e.id}
                   hidePost={hidePost}
                   author={e.author}
                   title={e.title}
                   description={e.description}
                   time={Moment(e.time.toDate()).fromNow()}
+                  userName={props.userName}
                 />
               );
             }
           })}
         </div>
       ) : (
+        //display a list of all the post minized
         <div className="main-screen">
           <Welcome />
           {posts.map((e) => {

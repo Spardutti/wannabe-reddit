@@ -33,7 +33,7 @@ function App() {
           userName={userName}
         />
       ) : (
-        <MainScreen />
+          <MainScreen userName={userName} logged={logged}/>
       )}
     </div>
   );

@@ -10,6 +10,7 @@ const Header = (props) => {
     props.setUserName(e.target.value);
   };
 
+  //get the first letter of the user to display it as an image
   const getUserLetter = () => {
     let name = props.userName;
     let letter = name[0].toUpperCase();
@@ -32,7 +33,7 @@ const Header = (props) => {
     }
   };
 
-
+  //display the form to create a new post
   const displayForm = (e) => {
     e.preventDefault();
     if (props.logged) {
@@ -46,6 +47,7 @@ const Header = (props) => {
     <div className="header">
       <h3>Wannabe Reddit</h3>
       {props.logged ? (
+        //show the user first letter if logged in
         <div className="user">{firstLetter}</div>
       ) : (
         <div className="login">

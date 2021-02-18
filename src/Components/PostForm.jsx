@@ -7,7 +7,6 @@ const PostForm = (props) => {
   const [postTitle, setPostTitle] = useState("");
   const [postDescription, setPostDescription] = useState("");
   const [postAuthor, setPostAuthor] = useState(props.userName);
-  //user name availabe as props.userName
 
   const getTitle = (e) => {
     setPostTitle(e.target.value);
@@ -17,6 +16,7 @@ const PostForm = (props) => {
     setPostDescription(e.target.value);
   };
 
+  //creates a new doc in the database with the passed info
   const createPost = (e) => {
     e.preventDefault();
     if (props.logged) {
@@ -24,18 +24,16 @@ const PostForm = (props) => {
         .firestore()
         .collection("posts")
         .add({
-          author:  postAuthor ,
-          title:  postTitle ,
+          author: postAuthor,
+          title: postTitle,
           description: postDescription,
           comments: [],
           timestamp: firebase.firestore.FieldValue.serverTimestamp(),
           id: uniqid(),
-
-          
         })
-        .then(
-          props.setShowForm(false))
-      .catch(error => console.log("error"))
+        //hides the form
+        .then(props.setShowForm(false))
+        .catch((error) => console.log("error"));
     }
   };
 
