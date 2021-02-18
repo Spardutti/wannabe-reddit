@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./styles/postform.css";
 import firebase from "firebase";
+import uniqid from "uniqid";
 
 const PostForm = (props) => {
   const [postTitle, setPostTitle] = useState("");
@@ -25,8 +26,12 @@ const PostForm = (props) => {
         .add({
           author:  postAuthor ,
           title:  postTitle ,
-          description:  postDescription ,
+          description: postDescription,
+          comments: [],
           timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+          id: uniqid(),
+
+          
         })
         .then(
           props.setShowForm(false))

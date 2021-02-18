@@ -24,8 +24,8 @@ const MainScreen = (props) => {
             title: elem.data().title,
             description: elem.data().description,
             author: elem.data().author,
-            id: uniqid(),
             time: elem.data().timestamp,
+            id: elem.data().id
           };
           setPosts((oldarray) => [...oldarray, post]);
         });
@@ -56,6 +56,7 @@ const MainScreen = (props) => {
             if (e.id === postId) {
               return (
                 <FullPost
+                  id={e.id}
                   hidePost={hidePost}
                   author={e.author}
                   title={e.title}

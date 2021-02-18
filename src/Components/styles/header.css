@@ -7,19 +7,19 @@
   background-color: black;
   height: 170px;
   text-align: center;
-  margin: -4vh 0 0 5%;
+  margin: -40px 0 0 5%;
   box-shadow: red 0px 0px 10px 5px;
 }
 
 .header h3 {
   color: red;
-  margin-top: 2%;
+  margin-top: 5px;
 }
 
 .login {
   position: absolute;
   right: 3%;
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
   width: 200px;
   height: 100px;

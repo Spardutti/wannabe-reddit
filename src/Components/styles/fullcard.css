@@ -59,3 +59,31 @@ grid-template-columns: repeat(4, 1fr);
     font-size: 50px;
     cursor: pointer;
 }
+
+.full-card-comment-bar {
+    position: fixed;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    width: 50%;
+    margin: auto auto auto 80px;
+}
+
+.add-comment {
+    color: red;
+    background-color: yellow;
+    margin-left: 20px;
+    text-shadow: 1px 1px black;    
+    font-size: 30px;
+    border-radius: 40%;
+    cursor: pointer;
+    margin: auto;
+}
+
+.full-card-comment {
+    background-color: yellow;
+    min-height: 40px;
+    padding: 1px;
+    border-radius: 10px;
+    text-align: center;
+    color: red;
+}
