@@ -7,11 +7,17 @@ import uniqid from "uniqid";
 import FullPost from "./FullPost";
 import Moment from "moment";
 
+/* votes are updating when opening the fullpost, but are not updating when we
+come back to the main screen. refreshing the page seems stupid
+but if we set it with state we set the same votes for every card
+need to figure this out    */
 const MainScreen = (props) => {
   const [posts, setPosts] = useState([]);
   const [fullPost, setFullPost] = useState(false);
   const [postId, setPostId] = useState("");
   const [postComments, setPostComments] = useState([]);
+  const [msgs, setMsgs] = useState(0);
+  const [votes, setVotes ] = useState();
 
   //get the post from the database
   const getPost = () => {
@@ -28,12 +34,17 @@ const MainScreen = (props) => {
             author: elem.data().author,
             time: elem.data().timestamp,
             id: elem.data().id,
+            upvotes: elem.data().upvotes,
+            comments: elem.data().comments,
+            msgs: 2
           };
           //get the data from the DB and set it on an array to display it
           setPosts((oldarray) => [...oldarray, post]);
         });
       });
   };
+
+
   //updates the dom
   useEffect(() => {
     getPost();
@@ -41,21 +52,39 @@ const MainScreen = (props) => {
 
   //open the clicked post to see the comments/full post
   const openPost = (e) => {
-    let id = e.target.parentNode.id;
+    if (props.logged) {
+      let id = e.target.parentNode.parentNode.id;
+      listenForChanges(id);
+      firebase
+        .firestore()
+        .collection("posts")
+        .where("id", "==", id)
+        .get()
+        .then((snapshot) => {
+          snapshot.forEach((e) => {
+            let arr = e.data().comments;
+            setPostComments(arr);
+            setVotes(e.data().upvotes)
+          });
+        });
+      setPostId(id);
+      setFullPost(true);
+    } else {
+      alert("Please log in");
+    }
+  };
+//listen when new comments are added
+  const listenForChanges = (id) => {
     firebase
       .firestore()
       .collection("posts")
-      .where("id", "==", id)
-      .get()
-      .then((snapshot) => {
-        snapshot.forEach((e) => {
-          let arr = e.data().comments;
-          setPostComments((old) => [...old, arr]);
-          console.log(arr);
+      .onSnapshot((snapshot) => {
+        snapshot.docChanges().forEach((change) => {
+          if (change.type === "modified") {
+            setPostComments(change.doc.data().comments);
+          }
         });
       });
-    setPostId(id);
-    setFullPost(true);
   };
 
   useEffect(() => {}, [postId]);
@@ -74,6 +103,7 @@ const MainScreen = (props) => {
             if (e.id === postId) {
               return (
                 <FullPost
+                  postComments={postComments}
                   logged={props.logged}
                   id={e.id}
                   hidePost={hidePost}
@@ -82,6 +112,8 @@ const MainScreen = (props) => {
                   description={e.description}
                   time={Moment(e.time.toDate()).fromNow()}
                   userName={props.userName}
+                  upvotes={votes}
+                  setVotes={setVotes}
                 />
               );
             }
@@ -103,6 +135,8 @@ const MainScreen = (props) => {
                   author={e.author}
                   title={e.title}
                   description={e.description}
+                  msgs={msgs}
+                  upvotes={e.upvotes}
                 />
               );
           })}

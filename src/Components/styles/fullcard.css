@@ -1,12 +1,13 @@
 .full-card-container {
 background-color: black;
 margin: 200px auto;
-width: 60%;
-height: 600px;
+width: 720px;
+min-height: 600px;
 box-shadow: red 0px 0px 10px 5px;
 border: 3px solid yellow;
 text-align: center;
 position: relative;
+padding-bottom: 70px;
 }
 
 .full-card-title{
@@ -40,7 +41,7 @@ bottom: 0;
 width: 80%;
 height: 40px;
 display: grid;
-grid-template-columns: repeat(4, 1fr);
+grid-template-columns: repeat(3, 1fr);
 }
    
 .upvote{
@@ -61,22 +62,22 @@ grid-template-columns: repeat(4, 1fr);
 }
 
 .full-card-comment-bar {
-    position: fixed;
+    position: absolute;
     display: grid;
-    grid-template-columns: 5fr 1fr;
-    width: 50%;
-    margin: auto auto auto 80px;
+    grid-template-columns: 5fr 50px;
+    grid-gap: 50px;
+    width: 80%;
+    margin: auto auto auto 10%;
 }
 
 .add-comment {
     color: red;
     background-color: yellow;
-    margin-left: 20px;
     text-shadow: 1px 1px black;    
     font-size: 30px;
     border-radius: 40%;
     cursor: pointer;
-    margin: auto;
+    
 }
 
 .full-card-comment {

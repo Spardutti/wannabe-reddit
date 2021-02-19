@@ -77,25 +77,9 @@
   height: 100px;
 }
 
-.search-bar {
-  width: 30%;
-  margin: auto;
-  height: 30px;
-  bottom: 10%;
-}
 
-.search-input {
-  max-width: 150px;
-  background-color: yellow;
-  height: 100%;
-  color: red;
-  border-radius: 20px;
-  text-align: center;
-}
 
-.search-input:hover {
-  box-shadow: red 0px 0px 10px 3px;
-}
+
 
 ::placeholder {
   color: red;

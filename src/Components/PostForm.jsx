@@ -28,6 +28,8 @@ const PostForm = (props) => {
           title: postTitle,
           description: postDescription,
           comments: [],
+          upvotes: 0,
+          msgs: 0,
           timestamp: firebase.firestore.FieldValue.serverTimestamp(),
           id: uniqid(),
         })

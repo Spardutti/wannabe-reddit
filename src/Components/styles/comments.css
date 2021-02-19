@@ -1,0 +1,16 @@
+.comment-container {
+    background-color: yellow;
+    width: 80%;
+    margin: auto;
+
+}
+
+.comment-bottom-bar{ 
+    background-color: yellow;
+    margin: 10px auto;
+    bottom: 0;
+    width: 80%;
+    height: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    }

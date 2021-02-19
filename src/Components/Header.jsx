@@ -23,7 +23,6 @@ const Header = (props) => {
         .auth()
         .signInAnonymously()
         .then(() => {
-          console.log("signed in", props.userName);
           getUserLetter();
           props.setLogged(true);
         })
@@ -63,16 +62,7 @@ const Header = (props) => {
         </div>
       )}
       <img className="logo" src={logo} alt="" />
-      <form className="search-bar">
-        <input
-          className="search-input browser-default"
-          type="text"
-          placeholder="search something"
-        />
-        <button className="search-btn">
-          <i class="fas fa-search"></i>
-        </button>
-      </form>
+  
       <form className="create-bar">
         <button
           className="create-post-button"
