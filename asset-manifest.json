@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/wannabe-reddit/static/css/main.3a6ef86d.chunk.css",
+    "main.css": "/wannabe-reddit/static/css/main.e421343e.chunk.css",
     "main.js": "/wannabe-reddit/static/js/main.e92f639f.chunk.js",
     "main.js.map": "/wannabe-reddit/static/js/main.e92f639f.chunk.js.map",
     "runtime-main.js": "/wannabe-reddit/static/js/runtime-main.6b68f971.js",
@@ -10,14 +10,14 @@
     "static/js/2.65e15f60.chunk.js.map": "/wannabe-reddit/static/js/2.65e15f60.chunk.js.map",
     "index.html": "/wannabe-reddit/index.html",
     "static/css/2.0ba96f5c.chunk.css.map": "/wannabe-reddit/static/css/2.0ba96f5c.chunk.css.map",
-    "static/css/main.3a6ef86d.chunk.css.map": "/wannabe-reddit/static/css/main.3a6ef86d.chunk.css.map",
+    "static/css/main.e421343e.chunk.css.map": "/wannabe-reddit/static/css/main.e421343e.chunk.css.map",
     "static/js/2.65e15f60.chunk.js.LICENSE.txt": "/wannabe-reddit/static/js/2.65e15f60.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6b68f971.js",
     "static/css/2.0ba96f5c.chunk.css",
     "static/js/2.65e15f60.chunk.js",
-    "static/css/main.3a6ef86d.chunk.css",
+    "static/css/main.e421343e.chunk.css",
     "static/js/main.e92f639f.chunk.js"
   ]
 }
