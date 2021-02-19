@@ -77,10 +77,6 @@
   height: 100px;
 }
 
-
-
-
-
 ::placeholder {
   color: red;
   font-weight: bold;
@@ -117,7 +113,6 @@
   text-align: center;
   font-weight: bold;
   outline: none;
-
 }
 
 .create-post-button:hover {
@@ -129,7 +124,88 @@
   color: red;
 }
 
+@media only screen and (max-width: 360px) {
+  .header {
+    z-index: 1;
+    position: fixed;
+    width: 90%;
+    height: 170px;
+    text-align: center;
+    margin: -30px 0 0 5%;
+  }
+  .header h3 {
+    color: red;
+    margin-top: 5px;
+  }
+
+  .login {
+    position: absolute;
+    right: 0px;
+    top: 85px;
+    right: 20px;
+    width: 100px;
+    height: 50px;
+  }
+  .username {
+    background-color: yellow;
+    height: 20px;
+    max-width: 100px;
+    border-radius: 20px;
+    position: absolute;
+    left: 10%;
+    text-align: center;
+    font-weight: bold;
+    color: red;
+    font-size: 15px;
+  }
+
+  .login button {
+    position: absolute;
+    left: 10%;
+    top: 70%;
+    transform: translateY(-50%);
+    border: none;
+    outline: none;
+    background-color: yellow;
+    height: 20px;
+    border-radius: 25px;
+    width: 100px;
+    font-size: 15px;
+    font-weight: bold;
+    color: red;
+  }
 
 
 
+  .user {
+    position: absolute;
+    right: 4%;
+    color: red;
+    background-color: yellow;
+    width: 50px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 35px;
+    font-weight: bold;
+  }
 
+  .logo {
+    position: absolute;
+    left: 4%;
+    top: 30%;
+    height: 100px;
+  }
+  .create-post-button {
+    width: 150px;
+    background-color: yellow;
+    height: 100%;
+    color: red;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    outline: none;
+    margin-top: 50px;
+  }
+
+}
