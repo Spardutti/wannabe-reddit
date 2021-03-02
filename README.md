@@ -1,4 +1,4 @@
-# Clone basico de Reddit
+# Clon basico de Reddit
 
 [WannaBe Reddit](https://spardutti.github.io/wannabe-reddit/)
 
